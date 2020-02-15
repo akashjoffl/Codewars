@@ -1,7 +1,20 @@
-function longestConsec(strarr, k) {
-    // your code
-}
+function longestConsec(strArr, k) {
+    var n = strArr.length;
+    longest = "";
+    str = ''
 
+    if (n === 0 || k > n || k <= 0) {
+        return "";
+    }
+
+    for (var i = 0; i < n; i++) {
+        var currentStr = strArr.slice(i, k + i).join('');
+        if (currentStr.length > str.length) {
+            str = currentStr;
+        }
+    }
+    return str;
+}
 
 /*
 You are given an array strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
